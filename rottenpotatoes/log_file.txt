@@ -67,17 +67,30 @@ Feature: display list of movies sorted by different criteria
     And I am on the RottenPotatoes home page     # features/step_definitions/web_steps.rb:44
     Then 10 seed movies should exist             # features/step_definitions/movie_steps.rb:12
 
-  Scenario: sort movies alphabetically                   # features/sort_movie_list.feature:25
-    When I follow "Movie Title"                          # features/step_definitions/web_steps.rb:56
-    When I follow "Movie Title"                          # features/step_definitions/web_steps.rb:56
-    Then I should see "Chocolat" before "The Terminator" # features/step_definitions/movie_steps.rb:19
-    And I should see "Amelie" before "Chocolat"          # features/step_definitions/movie_steps.rb:19
+  Scenario: sort movies alphabetically                              # features/sort_movie_list.feature:25
+    When I follow "Movie Title"                                     # features/step_definitions/web_steps.rb:56
+    Then I should see "2001: A Space Odyssey" before "Aladdin"      # features/step_definitions/movie_steps.rb:19
+    And I should see "Aladdin" before "Amelie"                      # features/step_definitions/movie_steps.rb:19
+    And I should see "Amelie" before "Chicken Run"                  # features/step_definitions/movie_steps.rb:19
+    And I should see "Chicken Run" before "Chocolat"                # features/step_definitions/movie_steps.rb:19
+    And I should see "Chocolat" before "Raiders of the Lost Ark"    # features/step_definitions/movie_steps.rb:19
+    And I should see "Raiders of the Lost Ark" before "The Help"    # features/step_definitions/movie_steps.rb:19
+    And I should see "The Help" before "The Incredibles"            # features/step_definitions/movie_steps.rb:19
+    And I should see "The Incredibles" before "The Terminator"      # features/step_definitions/movie_steps.rb:19
+    And I should see "The Terminator" before "When Harry Met Sally" # features/step_definitions/movie_steps.rb:19
 
-  Scenario: sort movies in increasing order of release date # features/sort_movie_list.feature:32
-    When I follow "Release Date"                            # features/step_definitions/web_steps.rb:56
-    When I follow "Release Date"                            # features/step_definitions/web_steps.rb:56
-    Then I should see "Aladdin" before "Amelie"             # features/step_definitions/movie_steps.rb:19
+  Scenario: sort movies in increasing order of release date                    # features/sort_movie_list.feature:38
+    When I follow "Release Date"                                               # features/step_definitions/web_steps.rb:56
+    Then I should see "2001: A Space Odyssey" before "Raiders of the Lost Ark" # features/step_definitions/movie_steps.rb:19
+    And I should see "Raiders of the Lost Ark" before "The Terminator"         # features/step_definitions/movie_steps.rb:19
+    And I should see "The Terminator" before "When Harry Met Sally"            # features/step_definitions/movie_steps.rb:19
+    And I should see "When Harry Met Sally" before "Aladdin"                   # features/step_definitions/movie_steps.rb:19
+    And I should see "Aladdin" before "Chicken Run"                            # features/step_definitions/movie_steps.rb:19
+    And I should see "Chicken Run" before "Chocolat"                           # features/step_definitions/movie_steps.rb:19
+    And I should see "Chocolat" before "Amelie"                                # features/step_definitions/movie_steps.rb:19
+    And I should see "Amelie" before "The Incredibles"                         # features/step_definitions/movie_steps.rb:19
+    And I should see "The Incredibles" before "The Help"                       # features/step_definitions/movie_steps.rb:19
 
 4 scenarios (4 passed)
-35 steps (35 passed)
-0m0.795s
+48 steps (48 passed)
+0m0.637s
